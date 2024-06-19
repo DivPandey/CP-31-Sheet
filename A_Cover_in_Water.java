@@ -13,15 +13,12 @@ public class A_Cover_in_Water {
         int count = 0;
         for(int i = 0; i < n; i++){
             int Empty = 0;
-            char ch = condition.charAt(i);
-            if(ch == '.'){
-                while(i<n && condition.charAt(i) == '.' ){
-                    Empty++;
-                    i++;
-                    count++;
-                }
-                if(Empty >= 3) return 2;
+            while(i<n && condition.charAt(i) == '.' ){
+                Empty++;
+                i++;
+                count++;
             }
+            if(Empty >= 3) return 2;
         }
         return count;
     }
