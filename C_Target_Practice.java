@@ -46,7 +46,38 @@ public class C_Target_Practice {
                     board[row][col] = str.charAt(col);
                 }
             }
-            System.out.println(Score(board));
+            // System.out.println(Score(board));
+            System.out.println(Runs(board));
         }
+    }
+
+    // Other Method
+    public static int Runs(char [][] arr ){
+        int score = 0;
+
+        // Define the score map for each ring
+        int[][] scoreMap = {
+            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+            {1, 2, 2, 2, 2, 2, 2, 2, 2, 1},
+            {1, 2, 3, 3, 3, 3, 3, 3, 2, 1},
+            {1, 2, 3, 4, 4, 4, 4, 3, 2, 1},
+            {1, 2, 3, 4, 5, 5, 4, 3, 2, 1},
+            {1, 2, 3, 4, 5, 5, 4, 3, 2, 1},
+            {1, 2, 3, 4, 4, 4, 4, 3, 2, 1},
+            {1, 2, 3, 3, 3, 3, 3, 3, 2, 1},
+            {1, 2, 2, 2, 2, 2, 2, 2, 2, 1},
+            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+        };
+
+        // Calculate the score based on the score map
+        for(int i = 0 ; i < 10; i++){
+            for(int j = 0; j < 10 ; j++){
+                if (arr[i][j] == 'X') {
+                    score += scoreMap[i][j];
+                }
+            }
+        }
+
+        return score;
     }
 }
