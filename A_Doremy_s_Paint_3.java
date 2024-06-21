@@ -5,24 +5,15 @@ import java.util.Scanner;
  */
 public class A_Doremy_s_Paint_3 {
     public static void check(int arr []){
-        if(arr.length == 2){
-            System.out.println("Yes");
-            return;
-        }
-        if(arr.length == 3){
-            if(arr[0] == arr[1] || arr[0]==arr[2] || arr[1]==arr[2]){
-                System.out.println("Yes");
-                return;
+        int a = arr[0];
+        int b = arr[0];
+        for(int i = 0; i < arr.length-1; i++){
+            if(a == arr[i+1]){
+                while(a == arr [i+1]){
+                    a = arr[i+1];
+                    i++;
+                }
             }
-        }
-        
-        for(int i = 1; i<arr.length; i++){
-            if(arr[0] != arr[i]){
-                System.out.println("No");
-                return;
-            }
-        }
-        System.out.println("Yes");
     }
 
     public static void main(String[] args) {
